@@ -1,6 +1,6 @@
 ## Virtual Closet
 
-This is the front-end code for the web application Virtual Closet.
+This is the front-end code for the web application Virtual Closet. A way for people to organize and view their closet virtually.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
