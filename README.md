@@ -1,5 +1,7 @@
 ## Virtual Closet
 
+This is the front-end code for the web application Virtual Closet.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
