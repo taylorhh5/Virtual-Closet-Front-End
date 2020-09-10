@@ -1,0 +1,36 @@
+.loginLabel{
+    display: flex;
+    flex-direction: column;
+    margin-right: .5rem;
+}
+.loginForm{
+    display: flex;
+    // @media screen and (max-width: 800px) {
+    //     flex-direction: column;
+    //   }
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+    
+    } 
+}
+
+.loginButton{
+    font-family: "Open Sans Condensed", sans-serif;
+
+align-self: flex-end;
+height: 50%;
+border: 1px solid #2a3439;
+border-radius: 4px;
+font-weight: 600;
+background-color: #2a3439;
+color:white;
+width: 4rem;
+// @media screen and (max-width: 800px) {
+//     align-self: center;
+//   }
+
+@media screen and (max-width: 500px) {
+    margin-top: .5rem;
+align-self: center;
+}
+}

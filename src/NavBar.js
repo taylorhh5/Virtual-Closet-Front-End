@@ -20,6 +20,10 @@ const NavBar = (props) => {
             </div>
           {/* <NavLink >Home</NavLink> */}
           <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/login">Login</NavLink>
+
+          <NavLink to="/register">Register</NavLink>
+
 
           {/* <NavLink >
             Logout
