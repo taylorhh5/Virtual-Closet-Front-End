@@ -6,6 +6,7 @@ import Profile from "./Profile.js";
 import NavBar from "./NavBar.js";
 import Register from './Register.js'
 import Login from './Login.js'
+import Clothing from './Clothing.js'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Route exact path="/profile" component={Profile}></Route>
       <Route exact path="/register" component={Register}></Route>
       <Route exact path="/login" component={Login}></Route>
+      <Route exact path="/clothing" component={Clothing}></Route>
+
 
 
 
