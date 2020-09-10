@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Profile.scss";
+
 
 export default function Profile() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/closet/clothing")
+      .get("http://localhost:5000/api/closet/categories")
       .then((response) => {
         console.log(response.data, "response.data");
         setCategories(response.data);
@@ -20,8 +22,10 @@ export default function Profile() {
          <h1>Profile</h1>
       <section>
         {categories.map((category) => {
-          return <div><h1> {category.name}</h1>
-          <h2>{category.description}</h2>
+          return <div key={category.id}><h1> {category.name}</h1>
+       
+          <img className="category-img" src={category.image_url} /> 
+            <h3>{category.description}</h3>
           </div>;
         })}
       </section>
