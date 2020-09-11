@@ -31,11 +31,7 @@ if (props.loading) {
     (data) => `${data.category_id}` === category_id
   );
 
-  const clothingCategory = clothing.filter(
-    (data) => `${data.id}` === props.match.params.id
-  );
 
-console.log(clothingCategory,"clothing")
   return (
     <div>
       <h1>Clothes</h1>

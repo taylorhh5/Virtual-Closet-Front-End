@@ -18,12 +18,16 @@ export default function Profile(props) {
       })
       .catch((error) => console.log("error"));
   }, []);
-  // console.log(categories, "categories");
+
+  const userCatergories = categories.filter(
+    (data) => `${data.user_id}` === user_id
+  );
+  console.log(categories, "categories");
   return (
     <div>
       <h1>Profile</h1>
       <section>
-        {categories.map((category) => {
+        {userCatergories.map((category) => {
           return (
             <div key={category.id}>
               <h1> {category.name}</h1>
