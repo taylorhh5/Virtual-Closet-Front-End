@@ -7,15 +7,18 @@ import NavBar from "./NavBar.js";
 import Register from './Register.js'
 import Login from './Login.js'
 import Clothing from './Clothing.js'
+import PostClothing from './PostClothing.js'
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Route exact path="/profile" component={Profile}></Route>
-      <Route exact path="/register" component={Register}></Route>
-      <Route exact path="/login" component={Login}></Route>
+      <Route path="/profile" component={Profile}></Route>
+      <Route path="/register" component={Register}></Route>
+      <Route path="/login" component={Login}></Route>
       <Route exact path="/clothing" component={Clothing}></Route>
+      <Route exact path="/clothing/add" component={PostClothing}></Route>
+
 
 
 
