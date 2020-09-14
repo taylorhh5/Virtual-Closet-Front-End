@@ -23,6 +23,7 @@ export default function Profile(props) {
     (data) => `${data.user_id}` === user_id
   );
   console.log(categories, "categories");
+
   return (
     <div>
       <h1>Profile</h1>
@@ -31,7 +32,14 @@ export default function Profile(props) {
           return (
             <div key={category.id}>
               <h1> {category.name}</h1>
-              <Link  onClick={e => localStorage.setItem('category_id', category.id)}  className="movelist-move" to={`/clothing`}>
+              <Link
+                onClick={(e) => {
+                  localStorage.setItem("category_id", category.id);
+                  localStorage.setItem("category_name", category.name);
+                }}
+                className="movelist-move"
+                to={`/clothing`}
+              >
                 <img className="category-img" src={category.image_url} />
                 {/* <button className="edit-button" onClick={e => localStorage.setItem('category_id', category.id)}>Edit this move</button> */}
               </Link>

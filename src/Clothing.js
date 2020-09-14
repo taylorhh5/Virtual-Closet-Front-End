@@ -9,6 +9,8 @@ export default function Clothing(props) {
   const [clothing, setClothing] = useState([]);
 
   const category_id = localStorage.getItem("category_id");
+  const category_name = localStorage.getItem("category_name");
+
 
   useEffect(() => {
     axios
@@ -34,7 +36,7 @@ if (props.loading) {
 
   return (
     <div>
-      <h1>Clothes</h1>
+      <h1>{category_name}</h1>
       <section>
         {userClothing.map((clothing) => {
           return (
