@@ -3,8 +3,8 @@ import axios from "axios";
 
 import { withRouter } from "react-router";
 
-const PostClothing = (props) => {
-    
+const EditClothing = (props) => {
+  console.log(props, "props in edit");
   const category_id = localStorage.getItem("category_id");
   const user_id = localStorage.getItem("user_id");
   const category_name = localStorage.getItem("category_name");
@@ -13,10 +13,18 @@ const PostClothing = (props) => {
     name: "",
     description: "",
     image_url: "",
-    user_id: user_id,
-    category_id: category_id,
   };
   const [clothing, setClothing] = useState(details);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/closet/clothing/${props.match.params.id}`)
+      .then((response) => {
+        setClothing(response.data);
+      })
+      .catch((error) => console.log("error"));
+  }, []);
+
 
   const handleChange = (event) => {
     event.persist();
@@ -26,21 +34,23 @@ const PostClothing = (props) => {
     });
   };
 
-  const handleForm = (event) => {
+  const handleInput = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/api/closet/clothing", clothing)
+      .put(
+        `http://localhost:5000/api/closet/clothing/${props.match.params.id}`,
+        clothing
+      )
       .then((response) => {
-        console.log(response, "post clothing response");
-        props.history.push('/profile')
+        props.history.push("/profile");
       })
-      .catch((err) => alert("Clothing could not be added, please try again"));
+      .catch((err) => alert("Clothing could not be eidted, please try again"));
   };
 
   return (
     <>
-      <form className="registerForm" onSubmit={handleForm}>
-  <h1 className="signup">Add clothing to {category_name}</h1>
+      <form className="registerForm" onSubmit={handleInput}>
+        <h1 className="signup">Edit clothing</h1>
 
         <input
           className="registerInput"
@@ -58,7 +68,7 @@ const PostClothing = (props) => {
           onChange={handleChange}
           placeholder="Description"
         />
-             <input
+        <input
           className="registerInput"
           type="text"
           name="image_url"
@@ -66,11 +76,11 @@ const PostClothing = (props) => {
           onChange={handleChange}
           placeholder="Image URL"
         />
- 
-        <button className="signup-button">Add Clothing</button>
+
+        <button className="signup-button">Edit Clothing</button>
       </form>
     </>
   );
 };
 
-export default PostClothing;
+export default EditClothing;

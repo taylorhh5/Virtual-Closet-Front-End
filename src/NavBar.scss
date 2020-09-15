@@ -12,6 +12,7 @@
   font-family: "Roboto Condensed", serif;
   text-decoration: none;
   align-items: center;
+ 
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -43,16 +44,16 @@ a {
 //   color: rgba(0, 0, 0, 0.774);
 // color:floralwhite;
 
-  margin-right: 24em;
+  margin-right: 20em;
 
-  @media screen and (max-width: 900px) {
-    margin-right: 8rem;
-  }
-  @media screen and (max-width: 580px) {
-    margin-right: 0rem;
-    margin-bottom: 1rem;
-    padding-top: 0.2rem;
-  }
+  // @media screen and (max-width: 900px) {
+  //   margin-right: 8rem;
+  // }
+  // @media screen and (max-width: 580px) {
+  //   margin-right: 0rem;
+  //   margin-bottom: 1rem;
+  //   padding-top: 0.2rem;
+  // }
   // @media screen and (max-width: 400px) {
   //     margin-right:0rem;
   //     margin-top: 0rem;

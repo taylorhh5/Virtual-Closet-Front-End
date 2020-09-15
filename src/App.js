@@ -8,6 +8,7 @@ import Register from './Register.js'
 import Login from './Login.js'
 import Clothing from './Clothing.js'
 import PostClothing from './PostClothing.js'
+import EditClothing from './EditClothing.js'
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Route path="/login" component={Login}></Route>
       <Route exact path="/clothing" component={Clothing}></Route>
       <Route exact path="/clothing/add" component={PostClothing}></Route>
+      <Route exact path="/clothing/edit/:id" component={EditClothing}></Route>
+
 
 
 
