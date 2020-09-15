@@ -9,7 +9,7 @@ import Login from './Login.js'
 import Clothing from './Clothing.js'
 import PostClothing from './PostClothing.js'
 import EditClothing from './EditClothing.js'
-
+import PostCategory from './PostCategory.js'
 function App() {
   return (
     <div className="App">
@@ -20,6 +20,8 @@ function App() {
       <Route exact path="/clothing" component={Clothing}></Route>
       <Route exact path="/clothing/add" component={PostClothing}></Route>
       <Route exact path="/clothing/edit/:id" component={EditClothing}></Route>
+      <Route exact path="/clothing/category/add" component={PostCategory}></Route>
+
 
 
 
