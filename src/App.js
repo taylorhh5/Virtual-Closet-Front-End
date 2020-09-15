@@ -12,6 +12,7 @@ import EditClothing from './EditClothing.js'
 import PostCategory from './PostCategory.js'
 import EditCategory from './EditCategory.js'
 import DeleteClothing from './DeleteClothing.js'
+import DeleteCategory from './DeleteCategory.js'
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
       <Route exact path="/clothing/category/add" component={PostCategory}></Route>
       <Route exact path="/clothing/category/edit/:id" component={EditCategory}></Route>
+      <Route exact path="/clothing/category/delete/:id" component={DeleteCategory}></Route>
+
 
 
 

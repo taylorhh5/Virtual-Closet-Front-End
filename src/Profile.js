@@ -47,6 +47,9 @@ export default function Profile(props) {
               <Link to={`/clothing/category/edit/${category.id}`}>
             <button className="edit-button">Edit category</button>
           </Link>
+          <Link to={`/clothing/category/delete/${category.id}`}>
+            <button className="edit-button">Delete category</button>
+          </Link>
             </div>
           );
         })}
