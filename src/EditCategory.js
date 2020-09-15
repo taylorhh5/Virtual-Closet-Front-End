@@ -41,7 +41,7 @@ const EditCategory = (props) => {
       .then((response) => {
         props.history.push("/profile");
       })
-      .catch((err) => alert("Category could not be eidted, please try again"));
+      .catch((err) => alert("Category could not be edited, please try again"));
   };
 
   return (

@@ -44,7 +44,7 @@ const EditClothing = (props) => {
       .then((response) => {
         props.history.push("/profile");
       })
-      .catch((err) => alert("Clothing could not be eidted, please try again"));
+      .catch((err) => alert("Clothing could not be edited, please try again"));
   };
 
   return (

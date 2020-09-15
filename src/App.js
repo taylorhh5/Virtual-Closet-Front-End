@@ -11,6 +11,8 @@ import PostClothing from './PostClothing.js'
 import EditClothing from './EditClothing.js'
 import PostCategory from './PostCategory.js'
 import EditCategory from './EditCategory.js'
+import DeleteClothing from './DeleteClothing.js'
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
       <Route exact path="/clothing" component={Clothing}></Route>
       <Route exact path="/clothing/add" component={PostClothing}></Route>
       <Route exact path="/clothing/edit/:id" component={EditClothing}></Route>
+      <Route exact path="/clothing/delete/:id" component={DeleteClothing}></Route>
+
       <Route exact path="/clothing/category/add" component={PostCategory}></Route>
       <Route exact path="/clothing/category/edit/:id" component={EditCategory}></Route>
 

@@ -50,6 +50,9 @@ export default function Clothing(props) {
               <Link to={`/clothing/edit/${clothing.id}`}>
             <button className="edit-button">Edit clothing item</button>
           </Link>
+          <Link to={`/clothing/delete/${clothing.id}`}>
+            <button className="edit-button">Delete clothing item</button>
+          </Link>
             </div>
           );
         })}
