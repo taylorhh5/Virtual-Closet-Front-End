@@ -44,6 +44,9 @@ export default function Profile(props) {
                 <img className="category-img" src={category.image_url} />
               </Link>
               <h3>{category.description}</h3>
+              <Link to={`/clothing/category/edit/${category.id}`}>
+            <button className="edit-button">Edit category</button>
+          </Link>
             </div>
           );
         })}

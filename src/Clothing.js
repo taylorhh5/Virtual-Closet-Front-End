@@ -48,7 +48,7 @@ export default function Clothing(props) {
               <img className="clothing-img" src={clothing.image_url} />
               <h3>{clothing.description}</h3>
               <Link to={`/clothing/edit/${clothing.id}`}>
-            <button className="edit-button">Edit this move</button>
+            <button className="edit-button">Edit clothing item</button>
           </Link>
             </div>
           );
