@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Route path="/" component={Home}></Route>
+      <Route exact path="/" component={Home}></Route>
       <Route path="/profile" component={Profile}></Route>
       <Route path="/register" component={Register}></Route>
       <Route path="/login" component={Login}></Route>
