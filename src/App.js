@@ -13,11 +13,13 @@ import PostCategory from './PostCategory.js'
 import EditCategory from './EditCategory.js'
 import DeleteClothing from './DeleteClothing.js'
 import DeleteCategory from './DeleteCategory.js'
+import Home from './Home.js'
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <Route path="/" component={Home}></Route>
       <Route path="/profile" component={Profile}></Route>
       <Route path="/register" component={Register}></Route>
       <Route path="/login" component={Login}></Route>
