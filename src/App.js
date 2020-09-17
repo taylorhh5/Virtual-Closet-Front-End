@@ -14,6 +14,7 @@ import EditCategory from './EditCategory.js'
 import DeleteClothing from './DeleteClothing.js'
 import DeleteCategory from './DeleteCategory.js'
 import Home from './Home.js'
+import Demo from './Demo.js'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/profile" component={Profile}></Route>
       <Route path="/register" component={Register}></Route>
       <Route path="/login" component={Login}></Route>
+    <Route path="/demo" component={Demo}></Route>
       <Route exact path="/clothing" component={Clothing}></Route>
       <Route exact path="/clothing/add" component={PostClothing}></Route>
       <Route exact path="/clothing/edit/:id" component={EditClothing}></Route>
