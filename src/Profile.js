@@ -28,6 +28,9 @@ export default function Profile(props) {
       <Link to={`/clothing/category/add`}>
         <button className="edit-button">Add New Category</button>
       </Link>
+      <Link to={`/clothing/planner`}>
+        <button className="edit-button">Calendar</button>
+      </Link>
       <section>
         {userCatergories.map((category) => {
           return (
