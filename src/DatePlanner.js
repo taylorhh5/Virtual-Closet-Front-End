@@ -22,40 +22,25 @@ function DatePlanner() {
       .catch((error) => console.log("error"));
   }, []);
 
-  const [state, setstate] = useState(new Date());
-  console.log(state.toLocaleDateString(), "calendar state");
+  const [calendar, setCalendar] = useState(new Date());
+  console.log(calendar.toLocaleDateString(), "calendar calendar");
 
-  const onChange = (state) => {
-    setstate(state);
+  const onChange = (calendar) => {
+    setCalendar(calendar);
   };
-  let dateString = state.toLocaleDateString()
-  console.log(dateString.toString(), "dateString")
-
-  //     const [date, setdate] = useState(new Date())
-  // const handleChange = date => {
-  //         setdate(date)
-  //     }
-  //     console.log(date.toLocaleDateString(),"datepicker")
+  let dateString = calendar.toLocaleDateString();
 
   const userClothing = clothing.filter(
-    (data, dateString) =>
-      `${data.category_id}` === category_id && `${data.date}` === "10/31/2020" 
+    (data) =>
+      `${data.category_id}` === category_id && `${data.date}` === dateString
   );
   return (
     <div>
       <h1>Planner</h1>
-      <h1> Date is {state.toLocaleDateString()}</h1> 
-      <h3>{dateString}</h3>
-       <Calendar
-     onChange={onChange}
-            value={state}
-            />
-            {/* <DatePicker
-            selected={date}
-            onChange={handleChange}
-            />
-            <h1>{date.toLocaleDateString()}</h1> */}
-                  <section>
+      <h1> Date is {calendar.toLocaleDateString()}</h1>
+      <Calendar onChange={onChange} value={calendar} />
+
+      <section>
         {userClothing.map((clothing) => {
           return (
             <div key={clothing.id}>
@@ -64,7 +49,6 @@ function DatePlanner() {
               <img className="clothing-img" src={clothing.image_url} />
               <h3>{clothing.description}</h3>
               <h3>{clothing.date}</h3>
-              
             </div>
           );
         })}

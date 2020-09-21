@@ -14,6 +14,10 @@ const PostClothing = (props) => {
 
   const [calendar, setCalendar] = useState(new Date());
 
+
+  //set calendar to calendar 
+  //and set clothing to ...clothing, date:calendar
+  //had to add so that clothing.date would be updated when picking a new date
   const handleDateChange = (calendar) => {
     
     setCalendar(calendar);
