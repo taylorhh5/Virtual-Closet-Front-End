@@ -12,29 +12,44 @@ const PostClothing = (props) => {
   const user_id = localStorage.getItem("user_id");
   const category_name = localStorage.getItem("category_name");
 
-  const details = {
-    name: "",
-    description: "",
-    image_url: "",
-    date: "",
-    user_id: user_id,
-    category_id: category_id,
+  const [calendar, setCalendar] = useState(new Date());
+
+  const handleDateChange = (calendar) => {
+    
+    setCalendar(calendar);
+    setClothing({
+      ...clothing, date:calendar.toLocaleDateString(), 
+    })
   };
-  const [clothing, setClothing] = useState(details);
+  console.log(calendar, "datepicker");
+
+  // const details = {
+  //   name: "",
+  //   description: "",
+  //   image_url: "",
+  //   date: calendar,
+  //   user_id: user_id,
+  //   category_id: category_id,
+  // };
+  const [clothing, setClothing] = useState({
+    name: "",
+  description: "",
+  image_url: "",
+  date: "",
+  user_id: user_id,
+  category_id: category_id,});
   console.log(clothing, "clothing state");
 
-  const [calendar, setCalendar] = useState(new Date());
-  const handleDateChange = (calendar) => {
-    setCalendar(calendar);
-  };
-  console.log(calendar.toLocaleDateString(), "datepicker");
+
+
   const handleChange = (event) => {
     event.persist();
+   
     setClothing({
-      ...clothing,
-      date: calendar.toLocaleDateString(),
-      [event.target.name]: event.target.value,
+      ...clothing, 
+      [event.target.name]: event.target.value, 
     });
+   
   };
 
   const handleForm = (event) => {
@@ -88,7 +103,7 @@ const PostClothing = (props) => {
 
         <button className="signup-button">Add Clothing</button>
       </form>
-      <DatePicker selected={calendar} value={calendar} onChange={handleDateChange} />
+      <DatePicker selected={calendar} onChange={handleDateChange} />
     </>
   );
 };
