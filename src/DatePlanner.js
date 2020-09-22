@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
 function DatePlanner() {
-  const category_id = localStorage.getItem("category_id");
+    //getting user id from local storage that was saved on login
+  const user_id = localStorage.getItem("user_id");
 
+  //state for get clothing request
   const [clothing, setClothing] = useState([]);
 
   useEffect(() => {
@@ -22,17 +22,21 @@ function DatePlanner() {
       .catch((error) => console.log("error"));
   }, []);
 
+  //state for calendar date picker
   const [calendar, setCalendar] = useState(new Date());
-  console.log(calendar.toLocaleDateString(), "calendar calendar");
 
+  // onChange for calendar date picker
   const onChange = (calendar) => {
     setCalendar(calendar);
   };
-  let dateString = calendar.toLocaleDateString();
 
+  //   let dateString = calendar.toLocaleDateString();
+
+  //filter to get clothing that matches the user id and the calendar date
   const userClothing = clothing.filter(
     (data) =>
-      `${data.category_id}` === category_id && `${data.date}` === dateString
+      `${data.user_id}` === user_id &&
+      `${data.date}` === calendar.toLocaleDateString()
   );
   return (
     <div>
