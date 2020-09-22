@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Profile.scss";
 import { Link } from "react-router-dom";
+import DatePlanner from './DatePlanner.js'
 
 export default function Profile(props) {
   const [categories, setCategories] = useState([]);
+
+  const user_email = localStorage.getItem("email");
 
   const user_id = localStorage.getItem("user_id");
 
@@ -24,18 +27,19 @@ export default function Profile(props) {
 
   return (
     <div>
-      <h1>Profile</h1>
+      <h1 className="profile-heading">{user_email}'s closet</h1>
       <Link to={`/clothing/category/add`}>
         <button className="edit-button">Add New Category</button>
       </Link>
       <Link to={`/clothing/planner`}>
         <button className="edit-button">Calendar</button>
       </Link>
-      <section>
+      <div className="outer-div">
+      <div className="clothing-list-div">
         {userCatergories.map((category) => {
           return (
-            <div key={category.id}>
-              <h1> {category.name}</h1>
+            <div className="clothing-div" key={category.id}>
+              <h1 className="cat-name"> {category.name}</h1>
               <Link
                 onClick={(e) => {
                   localStorage.setItem("category_id", category.id);
@@ -56,7 +60,11 @@ export default function Profile(props) {
             </div>
           );
         })}
-      </section>
+      </div>
+      <div className="calendar-div">
+      <DatePlanner/>
+      </div>
+      </div>
     </div>
   );
 }

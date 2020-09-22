@@ -1,5 +1,32 @@
-.category-img{
-    width: 20%;
-    border: 1px solid black;
-    box-shadow: 5px 1px 20px #111;    
+.category-img {
+  width: 85%;
+  border: 1px solid black;
+  box-shadow: 5px 1px 20px #111;
+}
+.clothing-list-div {
+//   border: 1px solid pink;
+  display: flex;
+  flex-direction: row;
+  width: 51%;
+  flex-wrap: wrap;
+}
+.clothing-div {
+//   border: 1px solid red;
+  margin: 0.3rem;
+  padding: 0.2rem;
+  width: 45%;
+}
+.cat-name {
+  font-size: 3rem;
+}
+.profile-heading {
+  color: sandybrown;
+}
+.outer-div {
+  display: flex;
+  padding: 0.5rem;
+}
+.calendar-div {
+  width: 48%;
+  padding: 0.5rem;
 }
