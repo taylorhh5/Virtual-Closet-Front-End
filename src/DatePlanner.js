@@ -41,10 +41,10 @@ function DatePlanner() {
   );
   return (
     <div>
-      <h1>Planner</h1>
-      <h1> Date is {calendar.toLocaleDateString()}</h1>
+      <h1>Planned outfits for {calendar.toLocaleDateString()}.</h1>
+      <div className="calendar-container">
       <Calendar onChange={onChange} value={calendar} />
-
+</div>
       <section>
         {userClothing.map((clothing) => {
           return (

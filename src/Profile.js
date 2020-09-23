@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Profile.scss";
 import { Link } from "react-router-dom";
 import DatePlanner from './DatePlanner.js'
+import Clothing from './Clothing.js'
 
 export default function Profile(props) {
   const [categories, setCategories] = useState([]);
@@ -10,6 +11,8 @@ export default function Profile(props) {
   const user_email = localStorage.getItem("email");
 
   const user_id = localStorage.getItem("user_id");
+
+  const [allClothing, setAllClothing] = useState(false);
 
   useEffect(() => {
     axios
@@ -23,7 +26,22 @@ export default function Profile(props) {
   const userCatergories = categories.filter(
     (data) => `${data.user_id}` === user_id
   );
+
+  const [clothing, setClothing] = useState([]);
+
+  
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/closet/clothing")
+      .then((response) => {
+        setClothing(response.data);
+      })
+      .catch((error) => console.log("error"));
+  }, []);
+
+
   console.log(categories, "categories");
+  console.log(allClothing,"allclothing")
 
   return (
     <div>
@@ -31,11 +49,14 @@ export default function Profile(props) {
       <Link to={`/clothing/category/add`}>
         <button className="edit-button">Add New Category</button>
       </Link>
-      <Link to={`/clothing/planner`}>
-        <button className="edit-button">Calendar</button>
-      </Link>
-      <div className="outer-div">
+      <button onClick={ () => setAllClothing(!allClothing)}>
+        {allClothing ? "View Clothing Categories" : "View All Clothing"}
+        </button>
+   
+      <div className="outer-div"> 
+     { allClothing ? <Clothing allClothing={allClothing}/> :
       <div className="clothing-list-div">
+       
         {userCatergories.map((category) => {
           return (
             <div className="clothing-div" key={category.id}>
@@ -59,8 +80,10 @@ export default function Profile(props) {
           </Link>
             </div>
           );
-        })}
+        })
+        }
       </div>
+}
       <div className="calendar-div">
       <DatePlanner/>
       </div>
