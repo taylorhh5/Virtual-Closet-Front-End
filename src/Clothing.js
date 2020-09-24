@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Profile.scss";
+
 import { Link } from "react-router-dom";
 
 export default function Clothing(props) {
@@ -44,10 +45,10 @@ export default function Clothing(props) {
         <h2>Add Clothing</h2>
       </Link>
 {props.allClothing ?
-      <section>
+      <section className="clothing-items-div">
         {userAllClothing.map((clothing) => {
           return (
-            <div key={clothing.id}>
+            <div  key={clothing.id}>
               <h1> {clothing.name}</h1>
 
               <img className="clothing-img" src={clothing.image_url} />

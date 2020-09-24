@@ -54,7 +54,7 @@ export default function Profile(props) {
         </button>
    
       <div className="outer-div"> 
-     { allClothing ? <Clothing allClothing={allClothing}/> :
+     { allClothing ? <div className="clothing-div"> <Clothing allClothing={allClothing}/> </div> :
       <div className="clothing-list-div">
        
         {userCatergories.map((category) => {
