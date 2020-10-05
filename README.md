@@ -1,6 +1,7 @@
 ## Virtual Closet
 
-This is the front-end code for the web application Virtual Closet. A way for people to organize and view their closet virtually.
+This is the front-end code for the web application Virtual Closet. A way for people to organize and view their closet virtually. 
+Users can create categories, add/edit/delete clothing, and filter dates to see which outfits they plan to wear on which day.
 
 ## Tech Stack
 CSS | JavaScript | React | 
