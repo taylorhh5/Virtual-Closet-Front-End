@@ -84,9 +84,12 @@ export default function Profile(props) {
         }
       </div>
 }
+{ !allClothing ? 
       <div className="calendar-div">
       <DatePlanner/>
       </div>
+      : null
+      }
       </div>
     </div>
   );
