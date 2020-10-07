@@ -44,19 +44,30 @@ export default function Profile(props) {
 
   console.log(categories, "categories");
   console.log(allClothing,"allclothing")
+  console.log(showCategoryClothing,"showCategoryClothing")
+
 
   return (
     <div>
       <h1 className="profile-heading">{user_email}'s closet</h1>
+
+      { showCategoryClothing === false ? 
       <Link to={`/clothing/category/add`}>
         <button className="edit-button">Add New Category</button>
       </Link>
-      <button onClick={ () => setAllClothing(!allClothing)}>
+    :
+    
+    <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)} >View Categories</button>  
+    }
+      {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
         {allClothing ? "View Clothing Categories" : "View All Clothing"}
-        </button>
+        </button> */}
+        <Link to={`/clothing`}>
+            <button className="edit-button">View All Clothing</button>
+          </Link>
    
       <div className="outer-div"> 
-     { allClothing ? <div className="clothing-div"> <Clothing allClothing={allClothing}/> </div> :
+     { showCategoryClothing ? <div className="clothing-div"> <Clothing allClothing={allClothing}/> </div> :
       <div className="clothing-list-div">
        
         {userCatergories.map((category) => {
@@ -65,7 +76,7 @@ export default function Profile(props) {
               <h1 className="cat-name"> {category.name}</h1>
 
               <button
-              onClick={ () => setShowCategoryClothing(!showCategoryClothing)}
+             
                 onClick={(e) => {
                   localStorage.setItem("category_id", category.id);
                   localStorage.setItem("category_name", category.name);
@@ -73,7 +84,7 @@ export default function Profile(props) {
                 className="movelist-move"
                 to={`/clothing`}
               >
-                <img className="category-img" src={category.image_url} />
+                <img   onClick={ (e) => setShowCategoryClothing(!showCategoryClothing)}className="category-img" src={category.image_url} />
               </button>
 
               
