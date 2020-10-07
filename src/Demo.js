@@ -4,7 +4,8 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css"; 
+import Clothing from './Clothing.js'
 
 
 function Demo() {
@@ -34,6 +35,7 @@ const handleChange = date => {
             onChange={handleChange}
             />
             <h1>{date.toLocaleDateString()}</h1>
+            <Clothing/>
         </div>
     )
 }

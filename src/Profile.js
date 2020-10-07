@@ -14,6 +14,8 @@ export default function Profile(props) {
 
   const [allClothing, setAllClothing] = useState(false);
 
+  const [showCategoryClothing, setShowCategoryClothing] = useState(false);
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/closet/categories")
@@ -61,7 +63,9 @@ export default function Profile(props) {
           return (
             <div className="clothing-div" key={category.id}>
               <h1 className="cat-name"> {category.name}</h1>
-              <Link
+
+              <button
+              onClick={ () => setShowCategoryClothing(!showCategoryClothing)}
                 onClick={(e) => {
                   localStorage.setItem("category_id", category.id);
                   localStorage.setItem("category_name", category.name);
@@ -70,7 +74,9 @@ export default function Profile(props) {
                 to={`/clothing`}
               >
                 <img className="category-img" src={category.image_url} />
-              </Link>
+              </button>
+
+              
               <h3>{category.description}</h3>
               <Link to={`/clothing/category/edit/${category.id}`}>
             <button className="edit-button">Edit category</button>
