@@ -44,7 +44,7 @@ export default function Clothing(props) {
       <Link to={`/clothing/add`}>
         <h2>Add Clothing</h2>
       </Link>
-{props.allClothing ?
+{!props.clothingCategories ?
       <section className="clothing-items-div">
         {userAllClothing.map((clothing) => {
           return (

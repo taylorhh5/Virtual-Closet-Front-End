@@ -12,7 +12,7 @@ export default function Profile(props) {
 
   const user_id = localStorage.getItem("user_id");
 
-  const [allClothing, setAllClothing] = useState(false);
+  const [clothingCategories, setclothingCategories] = useState(true);
 
   const [showCategoryClothing, setShowCategoryClothing] = useState(false);
 
@@ -43,7 +43,7 @@ export default function Profile(props) {
 
 
   console.log(categories, "categories");
-  console.log(allClothing,"allclothing")
+  console.log(clothingCategories,"clothingCategories")
   console.log(showCategoryClothing,"showCategoryClothing")
 
 
@@ -60,14 +60,14 @@ export default function Profile(props) {
     <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)} >View Categories</button>  
     }
       {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
-        {allClothing ? "View Clothing Categories" : "View All Clothing"}
+        {clothingCategories ? "View Clothing Categories" : "View All Clothing"}
         </button> */}
         <Link to={`/clothing`}>
-            <button className="edit-button">View All Clothing</button>
+            <button className="edit-button" onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>View All Clothing</button>
           </Link>
    
       <div className="outer-div"> 
-     { showCategoryClothing ? <div className="clothing-div"> <Clothing allClothing={allClothing}/> </div> :
+     { showCategoryClothing ? <div className="clothing-list-div"> <Clothing clothingCategories={clothingCategories}/> </div> :
       <div className="clothing-list-div">
        
         {userCatergories.map((category) => {
@@ -101,7 +101,7 @@ export default function Profile(props) {
         }
       </div>
 }
-{ !allClothing ? 
+{ clothingCategories ? 
       <div className="calendar-div">
       <DatePlanner/>
       </div>
