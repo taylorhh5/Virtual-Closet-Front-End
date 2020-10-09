@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Profile.scss";
 
+
 import { Link } from "react-router-dom";
 
 export default function Clothing(props) {
@@ -12,6 +13,7 @@ export default function Clothing(props) {
   const category_id = localStorage.getItem("category_id");
   const category_name = localStorage.getItem("category_name");
   const user_id = localStorage.getItem("user_id");
+  const email = localStorage.getItem("email");
 
   useEffect(() => {
     axios
@@ -46,9 +48,11 @@ export default function Clothing(props) {
       </Link>
 {!props.clothingCategories ?
       <section className="clothing-items-div">
+        <h1>Here is all your cloting {email}</h1>
         {userAllClothing.map((clothing) => {
           return (
             <div  key={clothing.id}>
+              
               <h1> {clothing.name}</h1>
 
               <img className="clothing-img" src={clothing.image_url} />
