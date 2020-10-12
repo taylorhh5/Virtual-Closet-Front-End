@@ -53,17 +53,17 @@ export default function Profile(props) {
 
       { showCategoryClothing === false ? 
       <Link to={`/clothing/category/add`}>
-        <button className="edit-button">Add New Category</button>
+        <button className="button-style">Add New Category</button>
       </Link>
     :
     
-    <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)} >View Categories</button>  
+    <button className="button-style" onClick={ () => setShowCategoryClothing(!showCategoryClothing)} >View Categories</button>  
     }
       {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
         {clothingCategories ? "View Clothing Categories" : "View All Clothing"}
         </button> */}
         <Link to={`/clothing`}>
-            <button className="edit-button" onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>View All Clothing</button>
+            <button className="button-style" onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>View All Clothing</button>
           </Link>
    
       <div className="outer-div"> 

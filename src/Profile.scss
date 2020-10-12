@@ -37,3 +37,22 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.button-style{
+  color: #494949;
+  text-transform: uppercase;
+text-decoration: none;
+background: rgba(247, 124, 23, 0.651);
+padding: 18px;
+border-radius: 50px;
+display: inline-block;
+border: 3px solid #494949;
+transition: all 0.4s ease 0s;
+}
+
+.button-style:hover {
+  color: #ffffff !important;
+background: #60a3bc;
+border-color: #60a3bc !important;
+transition: all 0.4s ease 0s;
+  }
