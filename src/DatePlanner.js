@@ -41,7 +41,7 @@ function DatePlanner() {
   );
   return (
     <div>
-      <h1>Planned outfits for {calendar.toLocaleDateString()}.</h1>
+      <h1 className="cat-name">Planned outfits for {calendar.toLocaleDateString()}.</h1>
       <div className="calendar-container">
       <Calendar onChange={onChange} value={calendar} />
 </div>

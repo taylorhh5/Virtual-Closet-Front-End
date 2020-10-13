@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Profile.scss";
 
-
 import { Link } from "react-router-dom";
 
 export default function Clothing(props) {
@@ -42,51 +41,51 @@ export default function Clothing(props) {
 
   return (
     <div>
-      <h1>{category_name}</h1>
-      <Link to={`/clothing/add`}>
-        <h2>Add Clothing</h2>
-      </Link>
-{!props.clothingCategories ?
-      <section className="clothing-items-div">
-        <h1>Here is all your cloting {email}</h1>
-        {userAllClothing.map((clothing) => {
-          return (
-            <div  key={clothing.id}>
-              
-              <h1> {clothing.name}</h1>
+      {!props.clothingCategories ? (
+        <section className="clothing-items-div">
+          <h1>Here is all your clothing {email}</h1>
+          {userAllClothing.map((clothing) => {
+            return (
+              <div key={clothing.id}>
+                <h1> {clothing.name}</h1>
 
-              <img className="clothing-img" src={clothing.image_url} />
-              <h3>{clothing.description}</h3>
-              <Link to={`/clothing/edit/${clothing.id}`}>
-                <button className="edit-button">Edit clothing item</button>
-              </Link>
-              <Link to={`/clothing/delete/${clothing.id}`}>
-                <button className="edit-button">Delete clothing item</button>
-              </Link>
-            </div>
-          );
-        })}
-      </section>
-      :
-      <section>
-        {userClothing.map((clothing) => {
-          return (
-            <div key={clothing.id}>
-              <h1> {clothing.name}</h1>
+                <img className="clothing-img" src={clothing.image_url} />
+                <h3>{clothing.description}</h3>
+                <Link to={`/clothing/edit/${clothing.id}`}>
+                  <button className="edit-button">Edit clothing item</button>
+                </Link>
+                <Link to={`/clothing/delete/${clothing.id}`}>
+                  <button className="edit-button">Delete clothing item</button>
+                </Link>
+              </div>
+            );
+          })}
+        </section>
+      ) : (
+        <section>
+ <h1 className="cat-name">{category_name}</h1>
+                <Link className="button-style" to={`/clothing/add`}>
+                  <h2>Add Clothing to {category_name}</h2>
+                </Link>
+          {userClothing.map((clothing) => {
+            return (
+              <div key={clothing.id}>
+               
+                <h1> {clothing.name}</h1>
 
-              <img className="clothing-img" src={clothing.image_url} />
-              <h3>{clothing.description}</h3>
-              <Link to={`/clothing/edit/${clothing.id}`}>
-                <button className="edit-button">Edit clothing item</button>
-              </Link>
-              <Link to={`/clothing/delete/${clothing.id}`}>
-                <button className="edit-button">Delete clothing item</button>
-              </Link>
-            </div>
-          );
-        })}
-      </section>
-}
+                <img className="clothing-img" src={clothing.image_url} />
+                <h3>{clothing.description}</h3>
+                <Link to={`/clothing/edit/${clothing.id}`}>
+                  <button className="edit-button">Edit clothing item</button>
+                </Link>
+                <Link to={`/clothing/delete/${clothing.id}`}>
+                  <button className="edit-button">Delete clothing item</button>
+                </Link>
+              </div>
+            );
+          })}
+        </section>
+      )}
     </div>
   );
 }

@@ -1,7 +1,10 @@
 .category-img {
   width: 85%;
-  border: 1px solid black;
+  // border: 1px solid black;
   box-shadow: 5px 1px 20px #111;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 .clothing-list-div {
 //   border: 1px solid pink;
@@ -17,10 +20,14 @@
   width: 45%;
 }
 .cat-name {
-  font-size: 3rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.6rem;
 }
+
 .profile-heading {
+  font-family: 'Parisienne', cursive;
   color: sandybrown;
+  font-size: 3.2rem;
 }
 .outer-div {
   display: flex;
@@ -56,3 +63,4 @@ background: #60a3bc;
 border-color: #60a3bc !important;
 transition: all 0.4s ease 0s;
   }
+  
