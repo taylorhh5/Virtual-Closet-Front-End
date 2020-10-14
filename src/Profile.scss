@@ -4,6 +4,7 @@
   box-shadow: 5px 1px 20px #111;
   &:hover {
     transform: scale(1.05);
+    cursor: pointer;
   }
 }
 .clothing-list-div {
@@ -62,5 +63,6 @@ transition: all 0.4s ease 0s;
 background: #60a3bc;
 border-color: #60a3bc !important;
 transition: all 0.4s ease 0s;
+cursor: pointer;;
   }
   

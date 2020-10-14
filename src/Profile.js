@@ -98,10 +98,10 @@ export default function Profile(props) {
 
                   <h3>{category.description}</h3>
                   <Link to={`/clothing/category/edit/${category.id}`}>
-                    <button className="edit-button">Edit category</button>
+                    <button className="button-style">Edit category</button>
                   </Link>
                   <Link to={`/clothing/category/delete/${category.id}`}>
-                    <button className="edit-button">Delete category</button>
+                    <button className="button-style">Delete category</button>
                   </Link>
                 </div>
               );
