@@ -47,14 +47,14 @@ export default function Profile(props) {
   return (
     <div>
       <h1 className="profile-heading">{user_email}'s closet</h1>
-
+<div className="button-div"> 
       {showCategoryClothing === false ? (
         <Link to={`/clothing/category/add`}>
-          <button className="button-style">Add New Category</button>
+          <button className="button-style button-left">Add New Category</button>
         </Link>
       ) : (
         <button
-          className="button-style"
+          className="button-style button-left"
           onClick={() => setShowCategoryClothing(!showCategoryClothing)}
         >
           View Categories
@@ -65,12 +65,13 @@ export default function Profile(props) {
         </button> */}
       <Link to={`/clothing`}>
         <button
-          className="button-style"
+          className="button-style button-right"
           onClick={() => setShowCategoryClothing(!showCategoryClothing)}
         >
           View All Clothing
         </button>
       </Link>
+      </div>
 
       <div className="outer-div">
         {showCategoryClothing ? (

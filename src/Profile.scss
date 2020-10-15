@@ -66,3 +66,15 @@ transition: all 0.4s ease 0s;
 cursor: pointer;;
   }
   
+  .button-div{
+    display: flex;
+        align-content: flex-start;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: .5rem;
+  }
+  .button-left{
+    margin-left: 7rem;
+  }
+  .button-right{
+    margin-left:11rem;
+  }
