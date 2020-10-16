@@ -47,30 +47,34 @@ export default function Profile(props) {
   return (
     <div>
       <h1 className="profile-heading">{user_email}'s closet</h1>
-<div className="button-div"> 
-      {showCategoryClothing === false ? (
-        <Link to={`/clothing/category/add`}>
-          <button className="button-style button-left">Add New Category</button>
-        </Link>
-      ) : (
-        <button
-          className="button-style button-left"
-          onClick={() => setShowCategoryClothing(!showCategoryClothing)}
-        >
-          View Categories
-        </button>
-      )}
-      {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
+      <div className="button-div">
+        {showCategoryClothing === false ? (
+          <Link to={`/clothing/category/add`}>
+            <button className="button-style button-left">
+              Add New Category
+            </button>
+          </Link>
+        ) : (
+          <button
+            className="button-style button-left"
+            onClick={() => setShowCategoryClothing(!showCategoryClothing)}
+          >
+            View Categories
+          </button>
+        )}
+        {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
         {clothingCategories ? "View Clothing Categories" : "View All Clothing"}
         </button> */}
-      <Link to={`/clothing`}>
-        <button
-          className="button-style button-right"
-          onClick={() => setShowCategoryClothing(!showCategoryClothing)}
-        >
-          View All Clothing
-        </button>
-      </Link>
+        <Link to={`/clothing`}>
+          <button
+            className="button-style button-right"
+            onClick={() => setShowCategoryClothing(!showCategoryClothing)}
+          >
+            View All Clothing
+          </button>
+        </Link>
+
+        <h2 className="calendar-header">Calendar</h2>
       </div>
 
       <div className="outer-div">
@@ -85,7 +89,6 @@ export default function Profile(props) {
                 <div className="clothing-div" key={category.id}>
                   <h1 className="cat-name"> {category.name}</h1>
 
-          
                   <img
                     onClick={(e) => {
                       setShowCategoryClothing(!showCategoryClothing);

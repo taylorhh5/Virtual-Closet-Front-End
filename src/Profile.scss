@@ -8,25 +8,25 @@
   }
 }
 .clothing-list-div {
-//   border: 1px solid pink;
+  //   border: 1px solid pink;
   display: flex;
   flex-direction: row;
   width: 51%;
   flex-wrap: wrap;
 }
 .clothing-div {
-//   border: 1px solid red;
+  //   border: 1px solid red;
   margin: 0.3rem;
   padding: 0.2rem;
   width: 45%;
 }
 .cat-name {
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
   font-size: 2.6rem;
 }
 
 .profile-heading {
-  font-family: 'Parisienne', cursive;
+  font-family: "Parisienne", cursive;
   color: sandybrown;
   font-size: 3.2rem;
 }
@@ -46,38 +46,46 @@
   flex-wrap: wrap;
 }
 
-.button-style{
+.button-style {
   color: #494949;
   text-transform: uppercase;
-text-decoration: none;
-background: rgba(247, 124, 23, 0.651);
-padding: 18px;
-border-radius: 50px;
-display: inline-block;
-border: 3px solid #494949;
-transition: all 0.4s ease 0s;
+  text-decoration: none;
+  background: rgba(247, 124, 23, 0.651);
+  padding: 18px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 3px solid #494949;
+  transition: all 0.4s ease 0s;
 }
 
 .button-style:hover {
   color: #ffffff !important;
-background: #60a3bc;
-border-color: #60a3bc !important;
-transition: all 0.4s ease 0s;
-cursor: pointer;;
-  }
-  
-  .button-div{
-    display: flex;
-        align-content: flex-start;
-        border-bottom: 1px solid lightgrey;
-        padding-bottom: .5rem;
-  }
-  .button-left{
-    margin-left: 7rem;
-    width: 11rem;
-  }
-  .button-right{
-    margin-left:11rem;
-    width: 11rem;
+  background: #60a3bc;
+  border-color: #60a3bc !important;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
 
-  }
+.button-div {
+  display: flex;
+  align-items: center;
+  // align-items: flex-start;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 0.5rem;
+}
+.button-left {
+  margin-left: 7rem;
+  width: 11rem;
+  height: 5rem;
+}
+.button-right {
+  margin-left: 11rem;
+  width: 11rem;
+  height: 5rem;
+}
+.calendar-header {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  margin-left: 25rem;
+  margin-bottom: 0.7rem;
+}
