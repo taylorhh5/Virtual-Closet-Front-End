@@ -62,9 +62,7 @@ export default function Profile(props) {
             View Categories
           </button>
         )}
-        {/* <button onClick={ () => setShowCategoryClothing(!showCategoryClothing)}>
-        {clothingCategories ? "View Clothing Categories" : "View All Clothing"}
-        </button> */}
+      
         <Link to={`/clothing`}>
           <button
             className="button-style button-right"
