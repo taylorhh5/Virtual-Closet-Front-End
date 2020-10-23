@@ -82,7 +82,7 @@ export default function Profile(props) {
           </div>
         ) : (
           <div className="clothing-list-div">
-            <h3>You have {userCatergories.length} categories.</h3>
+            <h3 className="category-number">You have {userCatergories.length} categories.</h3>
             {userCatergories.map((category) => {
               return (
                 <div className="clothing-div" key={category.id}>
