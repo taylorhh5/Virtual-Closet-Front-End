@@ -27,14 +27,7 @@ const PostClothing = (props) => {
   };
   console.log(calendar, "datepicker");
 
-  // const details = {
-  //   name: "",
-  //   description: "",
-  //   image_url: "",
-  //   date: calendar,
-  //   user_id: user_id,
-  //   category_id: category_id,
-  // };
+
   const [clothing, setClothing] = useState({
     name: "",
   description: "",
@@ -96,14 +89,7 @@ const PostClothing = (props) => {
           onChange={handleChange}
           placeholder="Image URL"
         />
-        {/* <input
-          className="registerInput"
-          type="date"
-          name="date"
-          value={clothing.date}
-          onChange={handleChange}
-          placeholder="Date"
-        /> */}
+    
 
         <button className="signup-button">Add Clothing</button>
       </form>
