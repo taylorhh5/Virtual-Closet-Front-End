@@ -1,7 +1,11 @@
 .clothing-img{
     width:38%;
     border: 2px solid black;;
-}
+    box-shadow: 5px 1px 20px #111;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}}
 
 .react-calendar{
     display: inline-block;
